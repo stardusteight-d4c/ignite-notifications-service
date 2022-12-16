@@ -9,6 +9,7 @@
 > of data in a continuous stream. That is, it is a high-performance, real-time messaging system).
 
 :arrow_right: Microservices <br /> 
+:arrow_right: Domain-Driven Design (DDD) <br /> 
 :arrow_right: Messaging systems <br />
 :arrow_right: Project Architecture and Code Design <br />
 :arrow_right: Nest.js <br />
