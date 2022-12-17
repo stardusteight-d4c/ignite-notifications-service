@@ -11,7 +11,6 @@
 :arrow_right: Microservices <br /> 
 :arrow_right: Domain-Driven Design (DDD) <br /> 
 :arrow_right: Project Structure & Code Design <br />
-:arrow_right: Nest.js | A progressive Node.js framework <br />
 :arrow_right: Messaging systems <br />
 
 <br />
