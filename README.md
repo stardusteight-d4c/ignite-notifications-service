@@ -251,7 +251,7 @@ A use case specification `captures the requirements of a system in the form of u
 
 > It is recommended to `separate the business logic` (which may vary over time) `from the entity class` to a specific class for the business rule.
 
-#### Repository Pattern
+### Repository Pattern
 
 The Repository Pattern allows for `encapsulation of data access logic`, leveraging the use of `dependency injection (DI)` and providing a more object-oriented view of interactions with the Data Access Layer (DAL). Its use contributes to the isolation of the DAL with the business layer, better known as the domain layer.
 
