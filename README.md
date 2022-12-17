@@ -428,4 +428,38 @@ describe('Get recipient notifications', () => {
 
 > input -> validation -> compute -> return/output
 
+<br />
+
+## Messaging systems
+
+Messaging is a concept defined by distributed systems that communicate through the exchange of messages (events), and these messages are managed by a Message Broker (message server/module).
+
+### What is a Message Broker?
+
+A Message Broker is nothing more than a message server, responsible for ensuring that the message is queued, ensuring that it stays there as long as necessary until a user/customer removes it from there.
+
+In other words, it's like a mailbox and the messages are the letters that will be deposited (published) there and removed (consumed) by someone who is interested in reading these letters.
+
+### Synchronous or asynchronous?
+
+In the current scenario of software architecture, there are at least 2 common paradigms to solve the communication between different services: synchronous and asynchronous. The first form of communication can be implemented using the most common model of calls between services, which is the exchange of HTTP requests. The second, in turn, is more frequently implemented using messaging brokers.
+
+### What is event streaming?
+
+Event streaming is the digital equivalent of the human body's central nervous system. It's the technology foundation for the 'always-on' world, where business is increasingly defined and automated by software, and where the user of software is more software.
+
+Technically speaking, event streaming is the practice of capturing real-time data from event sources such as databases, sensors, mobile devices, cloud services and software applications in the form of event streams; store these streams of events durably for later retrieval; manipulate, process, and react to streams of events in real time as well as retrospectively; and routing the event streams to different target technologies as needed. Event streaming thus ensures a continuous flow and interpretation of data so that the right information is in the right place at the right time.
+
+### What can I use event streaming for?
+
+Event streaming is applied to a wide variety of use cases across a plethora of industries and organizations. Its many examples include:
+
+ - To process payments and financial transactions in real-time, such as in stock exchanges, banks, and insurances.
+ - To track and monitor cars, trucks, fleets, and shipments in real-time, such as in logistics and the automotive industry.
+ - To continuously capture and analyze sensor data from IoT devices or other equipment, such as in factories and wind parks.
+ - To collect and immediately react to customer interactions and orders, such as in retail, the hotel and travel industry, and mobile applications.
+ - To monitor patients in hospital care and predict changes in condition to ensure timely treatment in emergencies.
+ - To connect, store, and make available data produced by different divisions of a company.
+ - To serve as the foundation for data platforms, event-driven architectures, and microservices.
+
 
