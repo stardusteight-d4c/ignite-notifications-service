@@ -71,6 +71,16 @@ For example, suppose a service needs to send information to another service. Rat
 
 KafkaJS is a JavaScript client for Apache Kafka, which is a high-performance, low-latency messaging system widely used in microservice architectures. Kafka provides features such as fault tolerance, horizontal scalability, and data striping, making it a popular choice for handling large message volumes in distributed environments. KafkaJS allows application developers to create, produce, and consume Kafka messages in their Node.js applications, making it a valuable tool for anyone working with microservice architectures.
 
+### <strong>Unitary Tests</strong>
+
+Unit testing is a software testing technique that consists of individually testing code units, usually functions or methods, isolating them from the rest of the system. These tests are used to ensure that each unit in the system works correctly in isolation before integrating them into a larger system.
+
+Unit tests are important because they allow developers to verify that a unit of code works correctly before integrating it into a larger system. They allow you to detect and fix bugs earlier in the development process, which reduces the cost and time required to fix them.
+
+Additionally, unit tests provide documentation of how each unit of code should be used, which can help other developers understand the code and make changes more confidently. They also make the system easier to maintain, allowing developers to make changes without fear of introducing bugs to other parts of the system.
+
+In summary, unit testing is a fundamental practice to ensure software quality and to make the development process more efficient and secure.
+
 ## :speech_balloon: Explanations
 
 ### Entities and Value Objects (VOs)
