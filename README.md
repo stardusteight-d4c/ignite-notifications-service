@@ -1,130 +1,96 @@
-# Notifications Microservice | Clean Architecture and SOLID
-
-![banner](banner.png)
-
-> Project carried out at the  Rocketseat's `Ignite Lab | Node.js`, in this event we built a small notifications microservice using the
-> best practices for developing scalable and maintainable backend applications, applying various concepts related to `Clean Architecture`,
-> like `SOLID principles`, `Design Patterns` and `Domain-Driven Design` for example. We also create `unit and automated tests` to test different
-> `use cases` of the application. And at the end of the event, we integrated our application with `Apache Kafka` (an open-source platform for broadcasting
-> of data in a continuous stream. That is, it is a high-performance, real-time messaging system).
-
-:arrow_right: Microservices <br /> 
-:arrow_right: Domain-Driven Design (DDD) <br /> 
-:arrow_right: Project Structure & Code Design <br />
-:arrow_right: Messaging systems <br />
-
-<br />
-
-## Microservices 
-
-In software engineering, a `microservices architecture` consists of a `set of independent services limited in scope to a single business function`, called microservices. There is no single definition for the term, but component independence and limited liability are common features of this architecture, in contrast to a `monolithic` application. Another common characteristic is the communication between processes through lightweight protocols, usually HTTP.
-
-Microservices are an `architectural and organizational approach` to software development in which the software consists of `small independent services that communicate using well-defined APIs`. These services belong to small, self-sufficient teams.
-
-Microservices architectures facilitate scalability and streamline application development, enabling innovation and accelerating time to market for new features.
-
-### Differences between monolithic and microservice architectures
-
-With monolithic architectures, `all processes are highly coupled and run as a single service`. This means that if an application process experiences a spike in demand, the entire architecture must scale. The complexity of adding or enhancing features of monolithic applications increases as the code base grows. This complexity limits experimentation and makes it difficult to implement new ideas. Monolithic architectures increase application availability risk because many dependent and highly coupled processes increase the impact of a single process failure.
-
-With a microservices architecture, an application is built as `independent components that run each application process as a service`. These services communicate through a <strong>well-defined interface using lightweight APIs</strong>. Services are created for enterprise resources and `each service performs a single function`. Because they run independently, each service can be updated, deployed, and scaled to meet the demands of specific application functions.
-
-> Microservices must be separated by `domains` (areas of understanding/context that define a certain scope of the business rule), within these domains we can have similar `entities` but with different properties. And each microservice has its `own structure`, be it storage or application. 
- 
-*<i>aws.amazon.com/microservices/?nc1=h_ls</i> <br />
-
-<br />
-
-## Domain-Driven Design (DDD)
-
-Domain-Driven Design, also known by the acronym DDD, provides a framework for decision-making by combining software design and development practices.
-
-`Centered on business logic, or domain`, its basic idea proposes, through a collection of standards and design principles, to help the entire development cycle, to build applications that reflect the real understanding of business processes and rules.
-
-DDD is beyond the way of thinking, designing and developing software, even though it is not an architectural pattern, it affects how decisions to build software are made.
-
-### Understanding the Domain Driven Design
-
-To define Domain-Driven Design, we first need to consolidate our understanding of `Domain`. The term is extremely relevant, since `our design is now guided by this keyword`, which `simply represents the reason the software exists`.
-
- > The need for software to be built is related to a delimited context of ideas, knowledge, processes and problems that one wants to solve, in which a company is inserted.
-
-Bringing it to the real world, the `domain` of our project will be formed by all the knowledge absorbed about the company, as well as the model it operates.
-
-This means observing the involvement of `business rules, processes and possible integrations with existing systems as part of the solution`, whether internal, from partners or suppliers.
-
-Therefore, the Domain represents the heart of the business we are working on, with all its rules and peculiarities that DDD aims to attack, as is explicit in the title of Evans' book: “Attacking the complexities at the heart of software”.
-
-### Strategic Design vs Tactical Design
-
-DDD introduces us to two types of design tools.
-
-The first one helps us solve problems related to `software modeling`, the strategic design.
-
-While tactical design, which takes place after the strategic phase, focuses on product development, focused on the `implementation details`.
-
-`Strategic design` brings together a set of principles and standards, to `divide a complex business problem into several blocks with clear boundaries and specific responsibilities`, thus building a topology of top-level software design.
-
-The `tactical design`, in turn, has `a set of abstraction patterns of medium and low level components of the software`. With its practical standards, the tactician refines the result of the applied strategic design, converting it into code.
-
-Domain-Driven Design is an evolving process consisting of iterative cycles of applying strategic and tactical design. You start with strategic design, followed by tactical design.
-
-Developers play with tactical design tools, but if we have knowledge and a good understanding of strategic design tools, it will help us to architect better software.
-
-
-### Ubiquitous Language
-
-> Developers, with their technical bias, think about how to transform the business need into objects, relationships between them, apply abstraction, inheritance, polymorphism, patterns, frameworks, among others.
-
-Domains Experts, in turn, know the business in depth, but are unaware of these terminologies.
-
-Taking into account that `the software does not deal well with ambiguities`, the `Ubiquitous Language comes into play building a common language`, shared by the entire team, regardless of their role in the project. In order to reduce the conundrum exposed by James Shore in the text below.
-
-“It's an enigma. People who are domain experts – the domain experts – are rarely qualified to write software. The people who are qualified to write software – the programmers – don't always understand the problem domain.”
-
-`By applying it, we translate technical terms into expressions understandable to everyone involved, the same goes for the terminologies used by the business, generating an intersection between the parties.`
-
-This joint work generates a short feedback loop, strengthening ties between business specialists and the development team, thus producing software that makes more sense for the business.
-
-
-### Tactical Design
-
-Tactical Design groups together a set of tools to be used in the construction of your `domain model`, applied in a `single delimited context`, refining the result of the work carried out through the tools of Strategic Design.
-
-When Tactical Design patterns are used correctly, you can enrich your domain model (Domain Models), which will consequently reflect the business more clearly in the developed software. As shown below, Tactical Design can be divided into two groups.
-
 <div align="center">
-<img src="domain-layer.jpg" width="500" />
+  <img src="logo.svg" width="250" />
 </div>
 
-- <strong>Domain Models</strong>
+<h1 align="center">
+ Notifications Microservice, Backend Service
+</h1>
 
-Domain Models maintain the structured knowledge of the problem to be solved with the software, `representing the vocabulary and key concepts of the domain`, identifying the relationships between all entities, acting as a communication tool, together with the ubiquitous language.
+The e-commerce project uses a set of frontend and backend technologies to create a fully functional online store. The frontend is built with TypeScript, React, GraphQL, Redux, Vite and TailwindCSS. TypeScript is a programming language that provides static typing for JavaScript, which helps prevent errors and increases code security. React is a JavaScript library for building reactive and scalable user interfaces. GraphQL is a query and data manipulation language that allows for more efficient communication between the frontend and the backend. Redux is a library for managing state in complex JavaScript applications. Vite is a JavaScript project compilation tool that offers faster compilation times. TailwindCSS is a CSS framework that allows you to easily style your project with predefined classes.
 
-`It should clearly represent the problem being solved`, as well as the proposed solution. It can also be expressed through a diagram, or even written documentation, as long as it is accessible and understandable by everyone involved in the project.
+The backend is built with Node.js, TypeScript, Fastify, Prisma, Stripe and Json Web Tokens. Node.js is a JavaScript-based server application development platform. TypeScript is used again to provide statically typed code. Fastify is a lightweight and efficient web framework for Node.js. Prisma is an ORM (Object-Relational Mapping) for databases, which facilitates the application's interaction with the database. Stripe is an online payment platform for businesses. Json Web Tokens is an access token pattern that allows the application to pass authentication and authorization information between the frontend and the backend.
 
- - <strong>Domain Service</strong>
+Together, these technologies allow the e-commerce project to offer users a smooth and efficient shopping experience, from browsing the product catalog to final payment.
 
-Domain Services `represents a stateless structure that provides real-world business behaviors`, as it is a domain extension, it works with flows of various entities and aggregations. As it is only relevant to `business logic`, it should not touch on technical details.
+## :hammer_and_wrench: Tools
 
-Simply put, we can understand that it absorbs Domain responsibilities that the Model could not perform.
+* Node.js
+* Nest.js
+* TypeScript
+* Fastify
+* Prisma
+* Jest
+* KafkaJS
+* Prettier
 
-As the domain model generally deals with more refined behaviors that focus on some specific aspects of the business, a domain service tends to follow the same principles, providing solutions for business contexts that are too complex to be stored in a single Entity or Object. of value.
+## :mailbox_with_mail: Utilities
+ 
+### <strong>Solid</strong>
+ 
+The SOLID principle is a set of five object-oriented programming principles that seek to improve code quality and maintainability.
 
-The Domain Service bears no resemblance to Services at other tiers, except for the name.
+SOLID is an acronym that stands for the following principles:
 
-*<i>zup.com.br/blog/domain-driven-design-ddd</i> <br />
+ - <strong>S (Single Responsibility Principle)</strong>: each class or module should have a single responsibility.
+ - <strong>O (Open/Closed Principle)</strong>: software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification.
+ - <strong>L (Liskov Substitution Principle)</strong>: objects from a child class must be able to be used as objects from their parent class without breaking the program.
+ - <strong>I (Interface Segregation Principle)</strong>: Interfaces should be small and specific to each client that uses them, rather than a single large interface that encompasses all functionality.
+ - <strong>D (Dependency Inversion Principle)</strong>: high-level modules should not depend on low-level modules, both should depend on abstractions.
 
-<br />
+These principles are guides for software developers to write code that is easier to understand, modify, and test. By following these principles, code tends to be more modular, cohesive, and flexible, allowing changes to be made with less impact on other parts of the system.
 
-## Project Structure & Code Design
+### <strong>Modules</strong>
+
+NestJS is a framework for Node.js that uses the concept of module-based software architecture. In NestJS, modules are responsible for organizing and grouping related components such as controllers, service providers, data models and others. These modules can be easily reused in other projects and make the structure of a project easier to understand and maintain.
+
+Module directories in NestJS are folders that contain one or more files that define a system-specific module. A module directory contains all files related to that module, including controllers, service providers, data models, and so on.
+
+Inside the module directory, there are three main file types:
+
+ - <strong>module.ts</strong>: file that defines the module itself, where the components that the module contains and the dependencies it has on other modules are declared.
+ - <strong>controller.ts</strong>: file that defines the controller, which is responsible for receiving HTTP requests and forwarding them to the appropriate service.
+ - <strong>service.ts</strong>: file that defines the service provider, which is responsible for implementing the system's business logic.
+
+Module directories are organized hierarchically according to the system structure. In a typical NestJS project, there might be a module root directory that contains subdirectories for specific modules such as auth, users, and products.
+
+Modules in NestJS are designed to be independent and highly cohesive. Each module must have a unique and clearly defined responsibility within the system. This approach helps keep system code organized and easy to understand, especially on large and complex projects.
+
+### <strong>Microservice</strong>
+
+Microservices is a style of software architecture that divides a complex system into smaller, independent modules, each responsible for a specific business function. Each microservice is a standalone application, with its own codebase, database, API, and deployment processes.
+
+This approach allows the development team to work more efficiently and faster, as each microservice can be developed and deployed independently, without needing to coordinate with other services. In addition, this architecture makes it easier to scale and update specific parts of the system without affecting the entire system.
+
+Each microservice is generally responsible for a single business functionality, being an independent and autonomous service unit. Communications between microservices are usually done through APIs, which can be synchronous or asynchronous. Microservices are often deployed in containers, such as Docker, for ease of management and scalability.
+
+Microservices architecture is widely used in modern technology companies such as Netflix, Uber, Airbnb, among others. However, it is important to note that this approach also presents challenges, such as the complexity of communication between services, the need for constant monitoring and the management of different databases.
+
+### <strong>Messaging Service</strong>
+
+Messaging services like KafkaJS are often used in microservice architectures to provide asynchronous communication between different components of the distributed system. These messaging services act as intermediaries between the different services, allowing them to exchange messages with each other asynchronously, without worrying about the availability or location of the other service.
+
+For example, suppose a service needs to send information to another service. Rather than calling the receiving service directly and waiting for a response, the sending service posts a message to a messaging service topic, indicating the type of message and relevant information. The receiving service is then configured to listen for that topic and process incoming messages. This way, the services don't need to know each other or communicate directly, allowing them to be updated or scaled independently of each other.
+
+KafkaJS is a JavaScript client for Apache Kafka, which is a high-performance, low-latency messaging system widely used in microservice architectures. Kafka provides features such as fault tolerance, horizontal scalability, and data striping, making it a popular choice for handling large message volumes in distributed environments. KafkaJS allows application developers to create, produce, and consume Kafka messages in their Node.js applications, making it a valuable tool for anyone working with microservice architectures.
+
+## :speech_balloon: Explanations
 
 ### Entities and Value Objects (VOs)
+
+In software development, entities and value objects are important concepts in data modeling. They are used to represent real-world objects in a software system.
+
+An entity is an object with a unique identity that can change over time and that is distinct from other objects. Examples of entities might include a user, a product, or an order. Entities are usually represented by classes in object-oriented languages.
+
+A value object is an object that represents a value, not a distinct entity. Examples of valuables might include a currency, a date, or an address. Value objects are usually represented by immutable classes in object-oriented languages.
+
+The fundamental difference between the two is that entities have a unique identity that makes them distinct from other entities, while value objects do not have this unique identity. Also, entities can change over time, while value objects are immutable.
+
+In short, entities and value objects are concepts used to model real-world objects in a software system, and are critical in creating a consistent and efficient data model.
 
  - <strong>Entities</strong>
  
 ```ts
-// src/application/entities/notification.ts
+// server/src/application/entities/notification.ts
 
 import { Replace } from 'src/helpers/Replace';
 import { Content } from './content';
@@ -199,13 +165,9 @@ export class Notification {
   }
 }
 ```
-*<i>Example of an entity</i> <br />
+> *Example of an entity.*
  
-An entity appears in the conversation with the domain expert as `nouns` to be associated with a certain scope of the problem, such as: "issue an invoice, register an employee or register a customer", invoice, employee and customer are entities in a given domain.
-
-Entities are mutable, always by reference, and tend to be composed of several other objects, whether VOs or other entities, and `something important is that for them to have identity they need an identifier` because the object itself has no identity. They exist only because there are other objects to compose them, and `a change in some part of its state does not make it another object`, it remains the same if the identifier is the same. For all intents and purposes these are the classes people know about in object orientation.
- 
-Entities serve as a starting point so that we can think about the representation of data in the persistence model, it is common for entities to be translated into a table or collection of a relational or non-relational database.
+An entity appears in the conversation with the domain expert as <strong>nouns</strong> to be associated with a certain scope of the problem, such as: "issue an invoice, register an employee or register a customer", invoice, employee and customer are entities in a given domain.
 
  - <strong>Value Objects (VOs)</strong>
 
@@ -232,32 +194,26 @@ export class Content {
   }
 }
 ```
-*<i>Example of a value object</i> <br />
+> *Example of a value object.*
 
-`Value Objects have their own identity and any change in their value has another object`, without changing the identity, at the same time that if two distinct objects have exactly the same state they can be considered equal.
+Value Objects have their own identity and any change in their value has another object, without changing the identity, at the same time that if two distinct objects have exactly the same state they can be considered equal.
 
 Value Objects are usually immutable and small. They represent something unique, such as very simple quantifications or descriptions.
 
-> The type of comparison by Identifier belongs exclusively to Entities. While the structural comparison type belongs to Value Objects. The existence of Value Objects essentially depends on the existence of one or more entities:
-
-<div align="center">
-<img src="vos.png" width="500" />
-</div>
-
 ### Use Cases Specifications 
 
-A use case specification `captures the requirements of a system in the form of use cases described in logical and sequential steps`, so that they can meet the real needs of the user, and so that developers and testers can use these specifications described in the document use cases to be able to develop and test the specified functionalities.
+A use case specification captures the requirements of a system in the form of use cases described in logical and sequential steps, so that they can meet the real needs of the user, and so that developers and testers can use these specifications described in the document use cases to be able to develop and test the specified functionalities.
 
-> It is recommended to `separate the business logic` (which may vary over time) `from the entity class` to a specific class for the business rule.
+> *It is recommended to separate the business logic (which may vary over time) from the entity class to a specific class for the business rule.*
 
 ### Repository Pattern
 
-The Repository Pattern allows for `encapsulation of data access logic`, leveraging the use of `dependency injection (DI)` and providing a more object-oriented view of interactions with the Data Access Layer (DAL). Its use contributes to the isolation of the DAL with the business layer, better known as the domain layer.
+The Repository Pattern allows for encapsulation of data access logic, leveraging the use of <strong>Dependency injection (DI)</strong> and providing a more object-oriented view of interactions with the <strong>Data Access Layer (DAL)</strong>. Its use contributes to the isolation of the DAL with the business layer, better known as the domain layer.
 
-Using this pattern, we apply the principle of `ignorant persistence (PI)` to our domain layer, that is, `our business layer entities should not be impacted by the way they are persisted in the database`.
+Using this pattern, we apply the principle of <strong>Persistence Ignorance (PI)</strong> to our domain layer, that is, our business layer entities should not be impacted by the way they are persisted in the database.
 
 ```ts
-// src/application/repositories/notifications-repository.ts
+// server/src/application/repositories/notifications-repository.ts
 
 import { Notification } from '../entities/notification';
 
@@ -269,18 +225,18 @@ export abstract class NotificationsRepository {
   abstract findManyByRecipientId(recipientId: string): Promise<Notification[]>;
 }
 ```
-*<i>Notification entity repository</i> <br />
+> *Notification entity repository.*
 
-A repository `is an interface/collection of abstract methods that allow access to an entity's data`, the idea is that this interface abstracts that it is dealing with the persistent environment, since `the implementation of this interface will determine a contract, which should make the implementation logic of these abstract methods`, so we have the freedom to be able to have totally distinct implementations that are independent of which method is performed, the database, frameworks or libraries. A repository is unaware of all this, `the concrete implementation only needs to fulfill the interface or the contract using the same signature as the abstract method of that repository`.
+A repository is an interface/collection of abstract methods that allow access to an entity's data, the idea is that this interface abstracts that it is dealing with the persistent environment, since the implementation of this interface will determine a contract, which should make the implementation logic of these abstract methods, so we have the freedom to be able to have totally distinct implementations that are independent of which method is performed, the database, frameworks or libraries. A repository is unaware of all this, the concrete implementation only needs to fulfill the interface or the contract using the same signature as the abstract method of that repository.
 
-They create their dependencies or they are injected somehow. But their interfaces do not know. `A repository can be defined as an interface, which any concrete class will implement`. This class can even add more methods, but nobody will know they exist, because the class will always be behind an abstraction, which is the interface.
+They create their dependencies or they are injected somehow. But their interfaces do not know. A repository can be defined as an interface, which any concrete class will implement. This class can even add more methods, but nobody will know they exist, because the class will always be behind an abstraction, which is the interface.
 
-> In software engineering, dependency injection is a design pattern in which an object or function is given other objects or functions that it depends on.
+> *In software engineering, dependency injection is a design pattern in which an object or function is given other objects or functions that it depends on.*
 
 See the implementations:
 
 ```ts
-// src/application/use-cases/get-recipient-notifications.ts
+// server/src/application/use-cases/get-recipient-notifications.ts
 
 @Injectable()
 export class GetRecipientNotifications {
@@ -300,10 +256,11 @@ export class GetRecipientNotifications {
   }
 }
 ```
-*<i>a use case that calls a method from the repository</i> <br />
+> *A use case that calls a method from the repository.*
+<br />
 
 ```ts
-// src/infra/http/controllers/notifications.controller.ts
+// server/src/infra/http/controllers/notifications.controller.ts
 
 @Controller('notifications')
 export class NotificationsController {
@@ -326,10 +283,11 @@ export class NotificationsController {
   }
 }
 ```
-*<i>http layer calling a use case method</i> <br />
+> *HTTP layer calling a use case method.*
+<br />
 
 ```ts
-// src/infra/database/prisma/repositories/prisma-notifications-repository.ts
+// server/src/infra/database/prisma/repositories/prisma-notifications-repository.ts
 
 @Injectable()
 export class PrismaNotificationsRepository implements NotificationsRepository {
@@ -347,7 +305,8 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
   }
 }
 ```
-*<i>implementation in the persistence layer of the repository's findManyByRecipientId method</i> <br />
+> *Implementation in the persistence layer of the repository's findManyByRecipientId method.*
+<br />
 
 ```ts
 // test/repositories/in-memory-notifications-repository.ts
@@ -366,18 +325,20 @@ export class InMemoryNotificationsRepository
   }
 }
 ```
-*<i>implementation in the memory layer (for testing purposes) of the repository's findManyByRecipientId method</i> <br />
+> *Implementation in the memory layer of the repository's findManyByRecipientId method.*
 
 ### Factory Pattern
 
-Creating an object often requires complex processes not appropriate to include within the object's composition. Creating the object might require significant code duplication, might need information not accessible to the object's composition, might not provide a sufficient degree of abstraction, or might not be part of the object's composition concerns. `The factory method design pattern handles these problems by defining a separate method for creating objects`, which subclasses can override to specify the "derived type" of the product to be created.
+> *input -> validation -> compute -> return/output*
 
-A factory is `responsible for creating objects or instantiating classes following some commonly reusable model in the application`. One of the reasons for creating factories is code isolation/encapsulation/decoupling and always following a certain model when creating an object that can be overwritten.
+Creating an object often requires complex processes not appropriate to include within the object's composition. Creating the object might require significant code duplication, might need information not accessible to the object's composition, might not provide a sufficient degree of abstraction, or might not be part of the object's composition concerns. The factory method design pattern handles these problems by defining a separate method for creating objects, which subclasses can override to specify the "derived type" of the product to be created.
+
+A factory is responsible for creating objects or instantiating classes following some commonly reusable model in the application. One of the reasons for creating factories is code isolation/encapsulation/decoupling and always following a certain model when creating an object that can be overwritten.
 
 Simple application of a Factory:
 
 ```ts
-// test/factories/notifications-factory.ts
+// server/test/factories/notifications-factory.ts
 
 import { Content } from '@application/entities/content';
 import {
@@ -398,7 +359,7 @@ export function makeNotification(override: Override = {}) {
 ```
 
 ```ts
-// src/application/use-cases/get-recipient-notification.spec.ts
+// server/src/application/use-cases/get-recipient-notification.spec.ts
 
 describe('Get recipient notifications', () => {
   it('should be able to get recipient notifications', async () => {
@@ -426,40 +387,4 @@ describe('Get recipient notifications', () => {
 });
 ```
 
-> input -> validation -> compute -> return/output
-
-<br />
-
-## Messaging systems
-
-Messaging is a concept defined by distributed systems that communicate through the exchange of messages (events), and these messages are managed by a Message Broker (message server/module).
-
-### What is a Message Broker?
-
-A Message Broker is nothing more than a message server, responsible for ensuring that the message is queued, ensuring that it stays there as long as necessary until a user/customer removes it from there.
-
-In other words, it's like a mailbox and the messages are the letters that will be deposited (published) there and removed (consumed) by someone who is interested in reading these letters.
-
-### Synchronous or asynchronous?
-
-In the current scenario of software architecture, there are at least 2 common paradigms to solve the communication between different services: synchronous and asynchronous. The first form of communication can be implemented using the most common model of calls between services, which is the exchange of HTTP requests. The second, in turn, is more frequently implemented using messaging brokers.
-
-### What is event streaming?
-
-Event streaming is the digital equivalent of the human body's central nervous system. It's the technology foundation for the 'always-on' world, where business is increasingly defined and automated by software, and where the user of software is more software.
-
-Technically speaking, event streaming is the practice of capturing real-time data from event sources such as databases, sensors, mobile devices, cloud services and software applications in the form of event streams; store these streams of events durably for later retrieval; manipulate, process, and react to streams of events in real time as well as retrospectively; and routing the event streams to different target technologies as needed. Event streaming thus ensures a continuous flow and interpretation of data so that the right information is in the right place at the right time.
-
-### What can I use event streaming for?
-
-Event streaming is applied to a wide variety of use cases across a plethora of industries and organizations. Its many examples include:
-
- - To process payments and financial transactions in real-time, such as in stock exchanges, banks, and insurances.
- - To track and monitor cars, trucks, fleets, and shipments in real-time, such as in logistics and the automotive industry.
- - To continuously capture and analyze sensor data from IoT devices or other equipment, such as in factories and wind parks.
- - To collect and immediately react to customer interactions and orders, such as in retail, the hotel and travel industry, and mobile applications.
- - To monitor patients in hospital care and predict changes in condition to ensure timely treatment in emergencies.
- - To connect, store, and make available data produced by different divisions of a company.
- - To serve as the foundation for data platforms, event-driven architectures, and microservices.
-
-
+<p align="center">Project made with :blue_heart: by <a href="https://github.com/stardusteight-d4c">Gabriel Sena</a></p>
