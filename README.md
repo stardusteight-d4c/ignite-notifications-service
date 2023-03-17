@@ -6,11 +6,9 @@
  Notifications Microservice, Backend Service
 </h1>
 
-The e-commerce project uses a set of frontend and backend technologies to create a fully functional online store. The frontend is built with TypeScript, React, GraphQL, Redux, Vite and TailwindCSS. TypeScript is a programming language that provides static typing for JavaScript, which helps prevent errors and increases code security. React is a JavaScript library for building reactive and scalable user interfaces. GraphQL is a query and data manipulation language that allows for more efficient communication between the frontend and the backend. Redux is a library for managing state in complex JavaScript applications. Vite is a JavaScript project compilation tool that offers faster compilation times. TailwindCSS is a CSS framework that allows you to easily style your project with predefined classes.
+A notifications microservice backend project using Node.js, Nest.js, TypeScript, Fastify, Prisma, Jest, KafkaJS and Prettier is a software application developed for a distributed application that uses a microservices architecture to handle notifications .
 
-The backend is built with Node.js, TypeScript, Fastify, Prisma, Stripe and Json Web Tokens. Node.js is a JavaScript-based server application development platform. TypeScript is used again to provide statically typed code. Fastify is a lightweight and efficient web framework for Node.js. Prisma is an ORM (Object-Relational Mapping) for databases, which facilitates the application's interaction with the database. Stripe is an online payment platform for businesses. Json Web Tokens is an access token pattern that allows the application to pass authentication and authorization information between the frontend and the backend.
-
-Together, these technologies allow the e-commerce project to offer users a smooth and efficient shopping experience, from browsing the product catalog to final payment.
+In summary, this notifications microservice project uses various technologies to provide a distributed, scalable and reliable service to notify users on various scenarios such as new messages, password changes, event notifications, etc.
 
 ## :hammer_and_wrench: Tools
 
